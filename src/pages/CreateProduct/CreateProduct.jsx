@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import baseURL from '../../config/baseUrl';
-import style from './CreateProduct.module.scss';
 import Sidebar from '../../components/SideBar/Sidebar';
 
 //COMPONENTES
@@ -38,7 +37,6 @@ const CreateProduct = () => {
 
 	const token = useSelector((state) => state.currentUser.accessToken);
 	const userId = useSelector((state) => state.currentUser.user.id);
-	const [status, setStatus] = useState({});
 	const [product, setProduct] = useState({
 		title: '',
 		description: '',

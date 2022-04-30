@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -49,7 +49,6 @@ const Sidebar = (props) => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.currentUser.user);
 	console.log(user);
-	const token = useSelector((state) => state.currentUser.accessToken);
 
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const navigate = useNavigate();

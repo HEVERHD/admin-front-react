@@ -72,7 +72,7 @@ const Users = () => {
 										  ' ago'
 										: ''}
 								</p>
-								<p>{e.isAdmin ? 'Admin' : 'Client'}</p>
+								<p>{e.isAdmin ? 'Admin' : 'Employee'}</p>
 
 								<div className={style.menu}>
 									<button onClick={() => toggleMenu(`m${e.id}`)}>
@@ -90,7 +90,7 @@ const Users = () => {
 															{},
 															{ headers: { token: adminToken } }
 														)
-														.then((res) => notifySuccess(res.data.message))
+														.then((res) => {notifySuccess(res.data.message); dispatch(getAllUsers(adminToken));})
 														.catch((err) =>
 															notifyError(err.response.data.error)
 														);
@@ -108,7 +108,7 @@ const Users = () => {
 															{},
 															{ headers: { token: adminToken } }
 														)
-														.then((res) => notifySuccess(res.data.message))
+														.then((res) =>{notifySuccess(res.data.message);dispatch(getAllUsers(adminToken));})
 														.catch((err) =>
 															notifyError(err.response.data.error)
 														);

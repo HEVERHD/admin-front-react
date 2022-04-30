@@ -1,15 +1,14 @@
-import baseURL from "../../config/baseUrl";
 import Sidebar from '../../components/SideBar/Sidebar';
 import { useEffect, useState } from "react";
-import { deleteUser, getAllUsers, updateUser } from "../../redux/actions";
+import {  updateUser } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import style from './EditUser.module.scss';
-import {  useParams, useLocation } from "react-router-dom";
-import {TextField, Button, MenuItem} from '@mui/material';
+import { useLocation } from "react-router-dom";
+import {TextField, MenuItem} from '@mui/material';
 
 export default function EditUser(){
 
-    const {id} = useParams()
+
 
     const dispatch = useDispatch()
 
